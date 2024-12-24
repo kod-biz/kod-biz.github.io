@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Game - Kodbiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Kodbiz</h1>
+            <nav>
+                 <a href="index.html">Home</a>
+                <a href="cloud-services.html">Cloud Services</a>
+                <a href="kubernetes-services.html">Kubernetes</a>
+                <a href="ai-agents.html">AI Agents</a>
+            </nav>
+            <button id="darkModeToggle" class="md-btn md-btn-primary">Dark Mode</button>
+        </div>
+    </header>
+    <main>
+          <section id="coding-game-page" class="business-page">
+              <div class="container">
+                 <i class="material-icons md-icon">sports_esports</i>
+                <h2>Empowering Young Minds: Learn Coding Through Godot Game Development</h2>
+                 <p>We are revolutionizing the way children learn to code by turning their love for gaming into a powerful educational journey. Using Godot, the free and open-source game engine, we make coding accessible, exciting, and deeply rewarding for kids of all backgrounds.</p>
+
+                  <p>Our program is built on game-based learning principles, leveraging the natural dopamine release associated with gaming to foster curiosity, engagement, and sustained interest in coding. Instead of merely playing games, kids will create their own interactive worlds, unlocking their creativity and enhancing their problem-solving skills in the process.</p>
+
+               <h3>Why Godot?</h3>
+                 <ul>
+                   <li><strong>Open Source & Free:</strong> An inclusive tool for every aspiring coder, ensuring no barriers to entry.</li>
+                    <li><strong>Industry-Grade Capabilities:</strong> Learn with the same tools used by professionals, preparing for real-world applications.</li>
+                     <li><strong>Ease of Use:</strong> Perfect for beginners, with a friendly interface and extensive community support.</li>
+                 </ul>
+
+
+                   <p>Our approach doesn’t just teach coding—it empowers children to think critically, collaborate effectively, and gain confidence in technology, all while having fun. By transforming screen time into skill-building time, we help shape the creators of tomorrow in a way that’s as enjoyable as it is educational.</p>
+
+                    <p>Join us in fostering the next generation of innovators and turning passion into purpose with Godot!</p>
+            </div>
+        </section>
+    </main>
+     <footer>
+        <div class="container">
+            <p>© 2023 Kodbiz. All rights reserved.</p>
+            </div>
+    </footer>
+      <script src="script.js"></script>
+         <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const header = document.querySelector('header');
+    const businessPage = document.querySelector('.business-page');
+    const footer = document.querySelector('footer');
+
+
+
+
+      // Function to toggle dark mode
+    function toggleDarkMode() {
+        body.classList.toggle('dark-mode');
+        header.classList.toggle('dark-mode');
+        businessPage.classList.toggle('dark-mode');
+        footer.classList.toggle('dark-mode')
+        darkModeToggle.classList.toggle('dark-mode');
+
+
+         // Store dark mode preference in localStorage
+        if(body.classList.contains('dark-mode')){
+            localStorage.setItem('darkMode', 'enabled')
+        }else{
+            localStorage.setItem('darkMode', 'disabled')
+        }
+    }
+
+
+     // Check user's preference on page load
+     if(localStorage.getItem('darkMode') === 'enabled'){
+        body.classList.add('dark-mode');
+        header.classList.add('dark-mode');
+          businessPage.classList.add('dark-mode');
+        footer.classList.add('dark-mode')
+         darkModeToggle.classList.add('dark-mode');
+    }
+
+
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+});
+    </script>
+</body>
+</html>
